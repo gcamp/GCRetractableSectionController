@@ -33,6 +33,16 @@
     return [self.colors count];
 }
 
+- (void)didSelectContentCellAtRow:(NSUInteger)row {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WOO!",) 
+                                                    message:NSLocalizedString(@"You just tapped me... Let that not happend again. :P",) 
+                                                   delegate:nil cancelButtonTitle:NSLocalizedString(@"Sorry...",) otherButtonTitles: nil];
+    [alert show];
+    [alert release];
+    
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 #pragma mark -
 #pragma mark Getters
 

@@ -53,10 +53,21 @@
     //You can reuse GCRetractableSectionController work by calling super, but you can start from scratch and give a new cell
     UITableViewCell* contentCell = [super contentCellForRow:row];
     
-    if (row == 0) contentCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    else if (row == 1) contentCell.accessoryView = [[[UISwitch alloc] init] autorelease];
-    else if (row == 2) contentCell.backgroundColor = [UIColor blueColor];
-    
+    if (row == 0) {
+        contentCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        contentCell.accessoryView = nil;
+        contentCell.backgroundColor = [UIColor whiteColor];
+    }
+    else if (row == 1) {
+        contentCell.accessoryView = [[[UISwitch alloc] init] autorelease];
+        contentCell.backgroundColor = [UIColor whiteColor];
+    }
+    else if (row == 2) {
+        contentCell.backgroundColor = [UIColor blueColor];
+        contentCell.accessoryView = nil;
+        contentCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+        
     return contentCell;
 }
 

@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"Demo",);
+    
     GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
     GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];

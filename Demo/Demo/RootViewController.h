@@ -10,5 +10,4 @@
 
 @interface RootViewController : UITableViewController
 
-
 @end

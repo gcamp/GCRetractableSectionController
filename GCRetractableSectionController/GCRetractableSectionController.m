@@ -91,7 +91,7 @@
 		cell.detailTextLabel.text = NSLocalizedString(@"No item",);
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryView = nil;
-        cell.textLabel.text = [UIColor blackColor];
+        cell.textLabel.textColor = [UIColor blackColor];
 	}
 	
 	return cell;

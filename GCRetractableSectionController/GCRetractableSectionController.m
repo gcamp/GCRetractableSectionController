@@ -19,7 +19,7 @@
 @synthesize viewController;
 @synthesize open;
 
-- (id) initWithTableView:(UIViewController*) givenViewController {
+- (id) initWithViewController:(UIViewController*) givenViewController {
 	if ((self = [super init])) {
         if (![givenViewController respondsToSelector:@selector(tableView)]) {
             //The view controller MUST have a tableView proprety

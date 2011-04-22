@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;
 @property (nonatomic, readonly) NSString* title;
 
-- (id) initWithTableView:(UIViewController*) givenViewController;
+- (id) initWithViewController:(UIViewController*) givenViewController;
 
 - (UITableViewCell*) cellForRow:(NSUInteger) row;
 - (UITableViewCell*) titleCell;

@@ -24,9 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithTableView:self];
-    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithTableView:self];
-    GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithTableView:self];
+    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
+    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
+    GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
     self.retractableControllers = [NSArray arrayWithObjects:simpleController, customController, emptyController, nil];
     [simpleController release];
     [customController release];

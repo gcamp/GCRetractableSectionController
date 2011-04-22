@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "GCSimpleSectionController.h"
+#import "GCArraySectionController.h"
 #import "GCCustomSectionController.h"
 #import "GCEmptySectionController.h"
 
@@ -27,16 +28,21 @@
     self.title = NSLocalizedString(@"Demo",);
     
     GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
+    GCArraySectionController* arrayController = [[GCArraySectionController alloc]
+                                                 initWithArray:[NSArray arrayWithObjects:@"This", @"content", @"is", @"in", @"an", @"array", nil] 
+                                                 viewController:self];
+    arrayController.title = NSLocalizedString(@"Content of an array",);
     GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
-    self.retractableControllers = [NSArray arrayWithObjects:simpleController, customController, emptyController, nil];
+    self.retractableControllers = [NSArray arrayWithObjects:simpleController, arrayController, customController, emptyController, nil];
     [simpleController release];
+    [arrayController release];
     [customController release];
     [emptyController release];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

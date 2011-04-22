@@ -19,6 +19,9 @@
 @synthesize viewController;
 @synthesize open;
 
+#pragma mark -
+#pragma mark Initialisation
+
 - (id) initWithViewController:(UIViewController*) givenViewController {
 	if ((self = [super init])) {
         if (![givenViewController respondsToSelector:@selector(tableView)]) {
@@ -33,7 +36,8 @@
 	return self;
 }
 
-#pragma mark Getter
+#pragma mark -
+#pragma mark Getters
 
 - (UITableView*) tableView {
 	return [self.viewController performSelector:@selector(tableView)];
@@ -55,6 +59,7 @@
 	return NSLocalizedString(@"No title",);
 }
 
+#pragma mark -
 #pragma mark Cells
 
 - (UITableViewCell *) cellForRow:(NSUInteger)row {
@@ -132,7 +137,8 @@
 	}
 }
 
-#pragma Presed Cell
+#pragma mark -
+#pragma mark Select Cell
 
 - (void) didSelectCellAtRow:(NSUInteger)row {
 	if (row == 0) [self didSelectTitleCell];

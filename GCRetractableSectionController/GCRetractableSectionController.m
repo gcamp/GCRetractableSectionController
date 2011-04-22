@@ -21,9 +21,10 @@
 
 - (id) initWithTableView:(UIViewController*) givenViewController {
 	if ((self = [super init])) {
-        if (![givenViewController respondToSelector:@selector(tableView)]) {
+        if (![givenViewController respondsToSelector:@selector(tableView)]) {
             //The view controller MUST have a tableView proprety
-            
+            [NSException raise:@"Wrong view controller" 
+                        format:@"The passed view controller to GCRetractableSectionController must respond to the tableView proprety"];
         }
         
 		self.viewController = givenViewController;
@@ -35,7 +36,7 @@
 #pragma mark Getter
 
 - (UITableView*) tableView {
-	return [self.viewController tableView];
+	return [self.viewController performSelector:@selector(tableView)];
 }
 
 - (NSUInteger) numberOfRow {

@@ -49,7 +49,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
-    return [sectionController didPressCellAtRow:indexPath.row];
+    return [sectionController didSelectCellAtRow:indexPath.row];
 }
 
 - (void)dealloc

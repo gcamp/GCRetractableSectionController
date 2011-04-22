@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GCRetractableSectionController.h"
 
+//That example show how GCRetractableSectionController react when it's empty
+
 @interface GCEmptySectionController : GCRetractableSectionController
 
 @end

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GCRetractableSectionController.h"
 
+//This is a simple example showing how to use really easily GCRetractableSectionController
+
 @interface GCSimpleSectionController : GCRetractableSectionController
 
 @end

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GCRetractableSectionController.h"
 
+//That example show more advense cutomization
+
 @interface GCCustomSectionController : GCRetractableSectionController
 
 @end

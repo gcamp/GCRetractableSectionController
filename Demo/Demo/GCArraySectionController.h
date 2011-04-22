@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "GCRetractableSectionController.h"
 
+//This is a GCRetractableSectionController that take a NSArray and display it like the simple example did.
+//You can use it directly in your project if your retractable controller is simple!
+
 @interface GCArraySectionController : GCRetractableSectionController 
 
 @property (nonatomic, copy, readwrite) NSString* title;

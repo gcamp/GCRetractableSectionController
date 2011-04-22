@@ -10,25 +10,27 @@
 
 @interface GCRetractableSectionController : NSObject
 
-@property (nonatomic, assign) UIViewController *viewController;
 @property (nonatomic, assign) BOOL open;
-
-@property (nonatomic, readonly) NSUInteger numberOfRow;
-@property (nonatomic, readonly) NSUInteger contentNumberOfRow;
-@property (nonatomic, readonly) NSString* title;
 
 - (id) initWithViewController:(UIViewController*) givenViewController;
 
+//Used by the UITableView's dataSource
 - (UITableViewCell*) cellForRow:(NSUInteger) row;
+@property (nonatomic, readonly) NSUInteger numberOfRow;
+
+//Must be subclassed to work properly
+@property (nonatomic, readonly) NSString* title;
+@property (nonatomic, readonly) NSUInteger contentNumberOfRow;
+- (NSString*) titleContentForRow:(NSUInteger) row;
+
+//Can be subclassed for more control
 - (UITableViewCell*) titleCell;
 - (UITableViewCell*) contentCellForRow:(NSUInteger) row;
 
-- (void) setAccesoryViewOnCell:(UITableViewCell*) cell;
-
+//Respond to cell selection
 - (void) didSelectCellAtRow:(NSUInteger) row;
 - (void) didSelectTitleCell;
 - (void) didSelectContentCellAtRow:(NSUInteger) row;
 
-- (NSString*) titleContentForRow:(NSUInteger) row;
 
 @end

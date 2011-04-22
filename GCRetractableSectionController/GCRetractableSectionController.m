@@ -10,7 +10,10 @@
 
 @interface GCRetractableSectionController ()
 
+@property (nonatomic, assign) UIViewController *viewController;
 @property (nonatomic, readonly) UITableView *tableView;
+
+- (void) setAccessoryViewOnCell:(UITableViewCell*) cell;
 
 @end
 
@@ -67,7 +70,7 @@
 	
 	if (row == 0) {
 		cell = [self titleCell];
-		if (self.contentNumberOfRow != 0) [self setAccesoryViewOnCell:cell];
+		if (self.contentNumberOfRow != 0) [self setAccessoryViewOnCell:cell];
 	}
 	else cell = [self contentCellForRow:row - 1];
 	
@@ -109,7 +112,7 @@
 	return cell;
 }
 
-- (void) setAccesoryViewOnCell:(UITableViewCell*) cell {
+- (void) setAccessoryViewOnCell:(UITableViewCell*) cell {
 	NSString* path = nil;
 	if (self.open) {
 		path = @"UpAcessory.png";

@@ -12,15 +12,17 @@ h3. Creation and customization
 
 First thing you need to do is subclass @GCRetractableSectionController@ to have your own section controller. (You can also look at @GCArraySectionController@, a drop-in subclass that you can use right away, available in the demo project.)
 
-The basics things you need to overwrite are the following. The @title@ property represent the title of the section. The @title@ is shown in the main cell when the section controller is closed. The @contentNumberOfRow@ should return the number of rows of _content_ in your section (the title cell is not content). You also overwrite @titleContentForRow:@ to provide the title of your content cells.
-
-See the @GCSimpleSectionController@ example in the demo project.
+The basics things you need to overwrite are the following. 
 
 <pre>
 @property (nonatomic, copy, readonly) NSString* title;
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;
 - (NSString*) titleContentForRow:(NSUInteger) row;
 </pre>
+
+The @title@ property represent the title of the section. The @title@ is shown in the main cell when the section controller is closed. The @contentNumberOfRow@ should return the number of rows of _content_ in your section (the title cell is not content). You also overwrite @titleContentForRow:@ to provide the title of your content cells.
+
+See the @GCSimpleSectionController@ example in the demo project.
 
 To react to selection of your content, you should overwrite in your section controller this method.
 
@@ -36,7 +38,7 @@ You can also change have more control on the content of your cells by overwritin
 - (UITableViewCell *)contentCellForRow:(NSUInteger)row;
 </pre>
 
-h3. @UITableView@'s dataSource usage
+h3. UITableView's dataSource usage
 
 When your @GCRetractableSectionController@ is ready, you need to use it in your @UIViewController@.
 

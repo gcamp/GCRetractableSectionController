@@ -150,7 +150,7 @@
 
 - (void) didSelectTitleCell {
 	self.open = !self.open;
-	if (self.contentNumberOfRow != 0) [self setAccesoryViewOnCell:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]]];
+	if (self.contentNumberOfRow != 0) [self setAccessoryViewOnCell:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]]];
 	
 	NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
 	NSUInteger section = indexPath.section;

@@ -48,11 +48,11 @@
 }
 
 - (NSString*) title {
-	return @"No title";
+	return NSLocalizedString(@"No title",);
 }
 
 - (NSString*) titleContentForRow:(NSUInteger) row {
-	return @"No title";
+	return NSLocalizedString(@"No title",);
 }
 
 #pragma mark Cells

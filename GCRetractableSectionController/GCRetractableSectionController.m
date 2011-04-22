@@ -74,7 +74,7 @@
 }
 
 - (UITableViewCell *) titleCell {
-	static NSString* titleCellIdentifier = @"TitleCellIdentifier";
+	NSString* titleCellIdentifier = [NSStringFromClass([self class]) stringByAppendingString:@"title"];
 	
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:titleCellIdentifier];
 	if (cell == nil) {
@@ -98,7 +98,7 @@
 }
 
 - (UITableViewCell *) contentCellForRow:(NSUInteger)row {
-	static NSString* contentCellIdentifier = @"contentCellIdentifier";
+	NSString* contentCellIdentifier = [NSStringFromClass([self class]) stringByAppendingString:@"content"];
 	
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:contentCellIdentifier];
 	if (cell == nil) {

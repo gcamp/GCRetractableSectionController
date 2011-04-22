@@ -25,9 +25,9 @@
 
 - (void) setAccesoryViewOnCell:(UITableViewCell*) cell;
 
-- (void) didPressCellAtRow:(NSUInteger) row;
-- (void) didPressTitleCell;
-- (void) didPressContentCellAtRow:(NSUInteger) row;
+- (void) didSelectCellAtRow:(NSUInteger) row;
+- (void) didSelectTitleCell;
+- (void) didSelectContentCellAtRow:(NSUInteger) row;
 
 - (NSString*) titleContentForRow:(NSUInteger) row;
 

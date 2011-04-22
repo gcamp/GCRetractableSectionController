@@ -133,12 +133,12 @@
 
 #pragma Presed Cell
 
-- (void) didPressCellAtRow:(NSUInteger)row {
-	if (row == 0) [self didPressTitleCell];
-	else [self didPressContentCellAtRow:row - 1];
+- (void) didSelectCellAtRow:(NSUInteger)row {
+	if (row == 0) [self didSelectTitleCell];
+	else [self didSelectContentCellAtRow:row - 1];
 }
 
-- (void) didPressTitleCell {
+- (void) didSelectTitleCell {
 	self.open = !self.open;
 	if (self.contentNumberOfRow != 0) [self setAccesoryViewOnCell:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]]];
 	
@@ -164,6 +164,6 @@
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void) didPressContentCellAtRow:(NSUInteger)row {}
+- (void) didSelectContentCellAtRow:(NSUInteger)row {}
 
 @end

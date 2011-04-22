@@ -67,10 +67,7 @@
 - (UITableViewCell *) cellForRow:(NSUInteger)row {
 	UITableViewCell* cell = nil;
 	
-	if (row == 0) {
-		cell = [self titleCell];
-		if (self.contentNumberOfRow != 0) [self setAccessoryViewOnCell:cell];
-	}
+	if (row == 0) cell = [self titleCell];
 	else cell = [self contentCellForRow:row - 1];
 	
 	return cell;
@@ -88,10 +85,12 @@
 	if (self.contentNumberOfRow != 0) {
 		cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%i items",), self.contentNumberOfRow];
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        [self setAccessoryViewOnCell:cell];
 	}
 	else {
 		cell.detailTextLabel.text = NSLocalizedString(@"No item",);
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryView = nil;
 	}
 	
 	return cell;

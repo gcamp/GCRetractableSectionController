@@ -8,6 +8,39 @@
 
 #import "GCSimpleSectionController.h"
 
+@interface GCSimpleSectionController ()
+
+@property (nonatomic, readonly) NSArray* colors;
+
+@end
+
 @implementation GCSimpleSectionController
+
+@synthesize colors;
+
+#pragma mark -
+#pragma mark Subclass
+
+- (NSString *)title {
+    return NSLocalizedString(@"Simple exemple",);
+}
+
+- (NSString *)titleContentForRow:(NSUInteger)row {
+    return [self.colors objectAtIndex:row];
+}
+
+- (NSUInteger)contentNumberOfRow {
+    return [self.colors count];
+}
+
+#pragma mark -
+#pragma mark Getters
+
+- (NSArray *)colors {
+    if (colors == nil) {
+        colors = [[NSArray alloc] initWithObjects:@"Blue", @"Green", @"Red", @"Yellow", nil];
+    }
+    return colors;
+}
 
 @end

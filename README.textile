@@ -48,7 +48,7 @@ You initialize your subclass by providing your @UIViewController@. You @UIViewCo
 YourSectionController* sectionController = [[YourSectionController alloc] initWithViewController:self];
 </pre>
 
-@GCRetractableSectionController@ provide simple method for you to use in you @UITableView@'s dataSource. An example usage follow.
+@GCRetractableSectionController@ provide simple method for you to use in you @UITableView@ 's dataSource. An example usage follow.
 
 <pre>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -43,4 +43,10 @@
     return colors;
 }
 
+- (void)dealloc {
+    [colors release];
+    
+    [super dealloc];
+}
+
 @end

@@ -29,6 +29,10 @@
     return [self.content count];
 }
 
+- (NSString *)titleContentForRow:(NSUInteger)row {
+    return [self.content objectAtIndex:row];
+}
+
 #pragma mark -
 #pragma mark Customization
 

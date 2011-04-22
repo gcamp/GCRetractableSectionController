@@ -1,0 +1,66 @@
+h1. GCRetractableSectionController
+
+GCRetractableSectionController is an helper class that let you make easily section of @UITableView@ that detract and contract when tapped.
+
+!http://littlekiwi.co.cc/GithubImages/GCRetractableSectionController.png!
+
+h2. Usage
+
+(See the demo project included)
+
+h3. Creation and customization
+
+First thing you need to do is subclass @GCRetractableSectionController@ to have your own section controller. (You can also look at @GCArraySectionController@, a drop-in subclass that you can use right away, available in the demo project.)
+
+The basics things you need to overwrite are the following. The @title@ property represent the title of the section. The @title@ is shown in the main cell when the section controller is closed. The @contentNumberOfRow@ should return the number of rows of _content_ in your section (the title cell is not content). You also overwrite @titleContentForRow:@ to provide the title of your content cells.
+
+See the @GCSimpleSectionController@ example in the demo project.
+
+<pre>
+@property (nonatomic, copy, readonly) NSString* title;
+@property (nonatomic, readonly) NSUInteger contentNumberOfRow;
+- (NSString*) titleContentForRow:(NSUInteger) row;
+</pre>
+
+To react to selection of your content, you should overwrite in your section controller this method.
+
+<pre>
+- (void)didSelectContentCellAtRow:(NSUInteger)row;
+</pre>
+
+You can also change have more control on the content of your cells by overwriting the following methods. Look at the @GCCustomSectionController@ in the demo project for more details.
+
+<pre>
+- (UITableViewCell *)cellForRow:(NSUInteger)row;
+- (UITableViewCell *)titleCell;
+- (UITableViewCell *)contentCellForRow:(NSUInteger)row;
+</pre>
+
+h3. @UITableView@'s dataSource usage
+
+When your @GCRetractableSectionController@ is ready, you need to use it in your @UIViewController@.
+
+You initialize your subclass by providing your @UIViewController@. You @UIViewController@ *must* respond to the 'tableView' selector and return a @UITableView@. You'll probably want to save that section controller as an ivar.
+
+<pre>
+YourSectionController* sectionController = [[YourSectionController alloc] initWithViewController:self];
+</pre>
+
+@GCRetractableSectionController@ provide simple method for you to use in you @UITableView@'s dataSource. An example usage follow.
+
+<pre>
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    GCRetractableSectionController* sectionController = /*Your section controller ivar*/;
+    return sectionController.numberOfRow;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCRetractableSectionController* sectionController = /*Your section controller ivar*/;
+    return [sectionController cellForRow:indexPath.row];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCRetractableSectionController* sectionController = /*Your section controller ivar*/;
+    return [sectionController didSelectCellAtRow:indexPath.row];
+}
+</pre>

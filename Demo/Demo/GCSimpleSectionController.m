@@ -34,6 +34,7 @@
 }
 
 - (void)didSelectContentCellAtRow:(NSUInteger)row {
+    //Reaction to the selection
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WOO!",) 
                                                     message:NSLocalizedString(@"You just tapped me... Let that not happend again. :P",) 
                                                    delegate:nil cancelButtonTitle:NSLocalizedString(@"Sorry...",) otherButtonTitles: nil];

@@ -32,7 +32,17 @@
 #pragma mark -
 #pragma mark Customization
 
+- (UITableViewCell *)cellForRow:(NSUInteger)row {
+    //All cells in the GCRetractableSectionController will be indented
+    UITableViewCell* cell = [super cellForRow:row];
+    
+    cell.indentationLevel = 1;
+    
+    return cell;
+}
+
 - (UITableViewCell *)titleCell {
+    //I removed the detail text here, but you can do whatever you want
     UITableViewCell* titleCell = [super titleCell];
     titleCell.detailTextLabel.text = nil;
     
@@ -40,6 +50,7 @@
 }
 
 - (UITableViewCell *)contentCellForRow:(NSUInteger)row {
+    //You can reuse GCRetractableSectionController work by calling super, but you can start from scratch and give a new cell
     UITableViewCell* contentCell = [super contentCellForRow:row];
     
     if (row == 0) contentCell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;

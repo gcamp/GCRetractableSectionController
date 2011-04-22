@@ -7,36 +7,55 @@
 //
 
 #import "RootViewController.h"
+#import "GCSimpleSectionController.h"
+#import "GCCustomSectionController.h"
+#import "GCEmptySectionController.h"
+
+@interface RootViewController ()
+
+@property (nonatomic, retain) NSArray* retractableControllers;
+
+@end
 
 @implementation RootViewController
+
+@synthesize retractableControllers;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithTableView:self];
+    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithTableView:self];
+    GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithTableView:self];
+    self.retractableControllers = [NSArray arrayWithObjects:simpleController, customController, emptyController, nil];
+    [simpleController release];
+    [customController release];
+    [emptyController release];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:section];
+    return sectionController.numberOfRow;
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-
-    // Configure the cell.
-    return cell;
+    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
+    return [sectionController cellForRow:indexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
+    return [sectionController didPressCellAtRow:indexPath.row];
 }
-
 
 - (void)dealloc
 {
+    self.retractableControllers = nil;
+    
     [super dealloc];
 }
 

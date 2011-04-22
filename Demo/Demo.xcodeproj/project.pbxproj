@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B022825B1361290E000975CF /* GCRetractableSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B022825A1361290E000975CF /* GCRetractableSectionController.m */; };
+		B02282601361294A000975CF /* GCSimpleSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B022825F1361294A000975CF /* GCSimpleSectionController.m */; };
+		B0228263136129BB000975CF /* GCCustomSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0228262136129BB000975CF /* GCCustomSectionController.m */; };
+		B0228266136129C8000975CF /* GCEmptySectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0228265136129C8000975CF /* GCEmptySectionController.m */; };
 		B09DF5B2136126E100E04146 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B1136126E100E04146 /* UIKit.framework */; };
 		B09DF5B4136126E100E04146 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B3136126E100E04146 /* Foundation.framework */; };
 		B09DF5B6136126E100E04146 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B5136126E100E04146 /* CoreGraphics.framework */; };
@@ -19,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02282591361290E000975CF /* GCRetractableSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRetractableSectionController.h; sourceTree = "<group>"; };
+		B022825A1361290E000975CF /* GCRetractableSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRetractableSectionController.m; sourceTree = "<group>"; };
+		B022825E1361294A000975CF /* GCSimpleSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSimpleSectionController.h; sourceTree = "<group>"; };
+		B022825F1361294A000975CF /* GCSimpleSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSimpleSectionController.m; sourceTree = "<group>"; };
+		B0228261136129BB000975CF /* GCCustomSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCustomSectionController.h; sourceTree = "<group>"; };
+		B0228262136129BB000975CF /* GCCustomSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCustomSectionController.m; sourceTree = "<group>"; };
+		B0228264136129C8000975CF /* GCEmptySectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCEmptySectionController.h; sourceTree = "<group>"; };
+		B0228265136129C8000975CF /* GCEmptySectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCEmptySectionController.m; sourceTree = "<group>"; };
 		B09DF5AD136126E100E04146 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09DF5B1136126E100E04146 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B09DF5B3136126E100E04146 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,9 +61,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02282581361290E000975CF /* GCRetractableSectionController */ = {
+			isa = PBXGroup;
+			children = (
+				B02282591361290E000975CF /* GCRetractableSectionController.h */,
+				B022825A1361290E000975CF /* GCRetractableSectionController.m */,
+			);
+			name = GCRetractableSectionController;
+			path = ../GCRetractableSectionController;
+			sourceTree = "<group>";
+		};
+		B022825D13612914000975CF /* DemoSectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B022825E1361294A000975CF /* GCSimpleSectionController.h */,
+				B022825F1361294A000975CF /* GCSimpleSectionController.m */,
+				B0228261136129BB000975CF /* GCCustomSectionController.h */,
+				B0228262136129BB000975CF /* GCCustomSectionController.m */,
+				B0228264136129C8000975CF /* GCEmptySectionController.h */,
+				B0228265136129C8000975CF /* GCEmptySectionController.m */,
+			);
+			name = DemoSectionControllers;
+			path = ../GCRetractableSectionController;
+			sourceTree = "<group>";
+		};
 		B09DF5A2136126E100E04146 = {
 			isa = PBXGroup;
 			children = (
+				B02282581361290E000975CF /* GCRetractableSectionController */,
+				B022825D13612914000975CF /* DemoSectionControllers */,
 				B09DF5B7136126E100E04146 /* Demo */,
 				B09DF5B0136126E100E04146 /* Frameworks */,
 				B09DF5AE136126E100E04146 /* Products */,
@@ -167,6 +205,10 @@
 				B09DF5BF136126E100E04146 /* main.m in Sources */,
 				B09DF5C2136126E100E04146 /* DemoAppDelegate.m in Sources */,
 				B09DF5C8136126E100E04146 /* RootViewController.m in Sources */,
+				B022825B1361290E000975CF /* GCRetractableSectionController.m in Sources */,
+				B02282601361294A000975CF /* GCSimpleSectionController.m in Sources */,
+				B0228263136129BB000975CF /* GCCustomSectionController.m in Sources */,
+				B0228266136129C8000975CF /* GCEmptySectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +321,7 @@
 				B09DF5D0136126E100E04146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,4 +10,8 @@
 
 @implementation GCEmptySectionController
 
+- (NSString *)title {
+    return NSLocalizedString(@"Empty section",);
+}
+
 @end

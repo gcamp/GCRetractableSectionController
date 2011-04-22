@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) NSUInteger numberOfRow;
 
 //Must be subclassed to work properly
-@property (nonatomic, readonly) NSString* title;
+@property (nonatomic, copy, readonly) NSString* title;
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;
 - (NSString*) titleContentForRow:(NSUInteger) row;
 
@@ -32,5 +32,8 @@
 - (void) didSelectTitleCell;
 - (void) didSelectContentCellAtRow:(NSUInteger) row;
 
+//Reserved for subclasses
+@property (nonatomic, readonly) UIViewController *viewController;
+@property (nonatomic, readonly) UITableView *tableView;
 
 @end

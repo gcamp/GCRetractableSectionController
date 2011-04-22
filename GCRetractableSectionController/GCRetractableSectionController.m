@@ -11,7 +11,6 @@
 @interface GCRetractableSectionController ()
 
 @property (nonatomic, assign) UIViewController *viewController;
-@property (nonatomic, readonly) UITableView *tableView;
 
 - (void) setAccessoryViewOnCell:(UITableViewCell*) cell;
 

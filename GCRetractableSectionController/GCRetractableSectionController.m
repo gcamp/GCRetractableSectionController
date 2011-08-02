@@ -18,6 +18,7 @@
 
 @implementation GCRetractableSectionController
 
+@synthesize useOnlyWhiteImages, titleTextColor, titleAlternativeTextColor;
 @synthesize viewController;
 @synthesize open;
 
@@ -34,6 +35,7 @@
         
 		self.viewController = givenViewController;
 		self.open = NO;
+        self.useOnlyWhiteImages = NO;
 	}
 	return self;
 }
@@ -115,11 +117,12 @@
 	NSString* path = nil;
 	if (self.open) {
 		path = @"UpAccessory.png";
-		cell.textLabel.textColor = [UIColor colorWithRed:0.191 green:0.264 blue:0.446 alpha:1.000];
+        if (self.titleAlternativeTextColor == nil) cell.textLabel.textColor =  [UIColor colorWithRed:0.191 green:0.264 blue:0.446 alpha:1.000];
+        else cell.textLabel.textColor = self.titleAlternativeTextColor;
 	}	
 	else {
 		path = @"DownAccessory.png";
-		cell.textLabel.textColor = [UIColor blackColor];
+		cell.textLabel.textColor = (self.titleTextColor == nil ? [UIColor blackColor] : self.titleTextColor);
 	}
 	
 	UIImage* accessoryImage = [UIImage imageNamed:path];
@@ -128,11 +131,11 @@
 	UIImageView* imageView;
 	if (cell.accessoryView != nil) {
 		imageView = (UIImageView*) cell.accessoryView;
-		imageView.image = accessoryImage;
+		imageView.image = (self.useOnlyWhiteImages ? whiteAccessoryImage : accessoryImage);
 		imageView.highlightedImage = whiteAccessoryImage;
     }
 	else {
-		imageView = [[UIImageView alloc] initWithImage:accessoryImage];
+		imageView = [[UIImageView alloc] initWithImage:(self.useOnlyWhiteImages ? whiteAccessoryImage : accessoryImage)];
 		imageView.highlightedImage = whiteAccessoryImage;
 		cell.accessoryView = imageView;
 		[imageView release];

@@ -18,6 +18,11 @@
 - (UITableViewCell*) cellForRow:(NSUInteger) row;
 @property (nonatomic, readonly) NSUInteger numberOfRow;
 
+//Customize appearance
+@property (nonatomic, assign) BOOL useOnlyWhiteImages; //Use only white images if the cells background is dark
+@property (nonatomic, assign) UIColor* titleTextColor; //nil by default, black text
+@property (nonatomic, assign) UIColor* titleAlternativeTextColor; //nil by default, dark blue
+
 //Must be subclassed to work properly
 @property (nonatomic, copy, readonly) NSString* title;
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;

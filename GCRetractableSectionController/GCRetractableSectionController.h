@@ -10,7 +10,7 @@
 
 @interface GCRetractableSectionController : NSObject
 
-@property (nonatomic, assign) BOOL open;
+@property (nonatomic, assign, getter = isOpen) BOOL open;
 
 - (id) initWithViewController:(UIViewController*) givenViewController;
 
@@ -19,7 +19,8 @@
 @property (nonatomic, readonly) NSUInteger numberOfRow;
 
 //Customize appearance
-@property (nonatomic, assign) BOOL useOnlyWhiteImages; //Use only white images if the cells background is dark
+ //Use only white images if the cells background is dark
+@property (nonatomic, assign, getter = isOnlyUsingWhiteImages) BOOL useOnlyWhiteImages;
 @property (nonatomic, assign) UIColor* titleTextColor; //nil by default, black text
 @property (nonatomic, assign) UIColor* titleAlternativeTextColor; //nil by default, dark blue
 

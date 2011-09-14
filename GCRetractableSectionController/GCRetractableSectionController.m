@@ -116,17 +116,17 @@
 - (void) setAccessoryViewOnCell:(UITableViewCell*) cell {
 	NSString* path = nil;
 	if (self.open) {
-		path = @"UpAccessory.png";
+		path = @"UpAccessory";
         if (self.titleAlternativeTextColor == nil) cell.textLabel.textColor =  [UIColor colorWithRed:0.191 green:0.264 blue:0.446 alpha:1.000];
         else cell.textLabel.textColor = self.titleAlternativeTextColor;
 	}	
 	else {
-		path = @"DownAccessory.png";
+		path = @"DownAccessory";
 		cell.textLabel.textColor = (self.titleTextColor == nil ? [UIColor blackColor] : self.titleTextColor);
 	}
 	
 	UIImage* accessoryImage = [UIImage imageNamed:path];
-	UIImage* whiteAccessoryImage = [UIImage imageNamed:[[path stringByDeletingPathExtension] stringByAppendingString:@"White.png"]];
+	UIImage* whiteAccessoryImage = [UIImage imageNamed:[[path stringByDeletingPathExtension] stringByAppendingString:@"White"]];
 	
 	UIImageView* imageView;
 	if (cell.accessoryView != nil) {

@@ -36,6 +36,7 @@
 		self.viewController = givenViewController;
 		self.open = NO;
         self.useOnlyWhiteImages = NO;
+        self.rowAnimation = UITableViewRowAnimationTop;
 	}
 	return self;
 }
@@ -166,8 +167,8 @@
 		[rowToInsert addObject:indexPathToInsert];
 	}
 	
-	if (self.open) [self.tableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
-	else [self.tableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
+	if (self.open) [self.tableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:self.rowAnimation];
+	else [self.tableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:self.rowAnimation];
 	[rowToInsert release];
 	
 	[self.tableView endUpdates];

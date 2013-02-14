@@ -2,7 +2,7 @@ h1. GCRetractableSectionController
 
 GCRetractableSectionController is an helper class that let you make easily section of @UITableView@ that detract and contract when tapped.
 
-!http://littlekiwi.co.cc/GithubImages/GCRetractableSectionController.png!
+!http://s3.amazonaws.com/cocoacontrols_production/ios_screens/97/full.png?1303498477!
 
 h2. Usage
 

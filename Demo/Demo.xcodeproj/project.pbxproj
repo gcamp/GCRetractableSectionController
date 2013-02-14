@@ -20,6 +20,7 @@
 		B022829C13612FBC000975CF /* UpAccessoryWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = B022829313612FBC000975CF /* UpAccessoryWhite.png */; };
 		B022829D13612FBC000975CF /* UpAccessoryWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B022829413612FBC000975CF /* UpAccessoryWhite@2x.png */; };
 		B02282A613613237000975CF /* GCArraySectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02282A513613237000975CF /* GCArraySectionController.m */; };
+		B0854CF516CD942300B28B39 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0854CF416CD942300B28B39 /* Default-568h@2x.png */; };
 		B09DF5B2136126E100E04146 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B1136126E100E04146 /* UIKit.framework */; };
 		B09DF5B4136126E100E04146 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B3136126E100E04146 /* Foundation.framework */; };
 		B09DF5B6136126E100E04146 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09DF5B5136126E100E04146 /* CoreGraphics.framework */; };
@@ -50,6 +51,7 @@
 		B022829413612FBC000975CF /* UpAccessoryWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessoryWhite@2x.png"; sourceTree = "<group>"; };
 		B02282A413613237000975CF /* GCArraySectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCArraySectionController.h; path = Demo/GCArraySectionController.h; sourceTree = SOURCE_ROOT; };
 		B02282A513613237000975CF /* GCArraySectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCArraySectionController.m; path = Demo/GCArraySectionController.m; sourceTree = SOURCE_ROOT; };
+		B0854CF416CD942300B28B39 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B09DF5AD136126E100E04146 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09DF5B1136126E100E04146 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B09DF5B3136126E100E04146 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 		B09DF5A2136126E100E04146 = {
 			isa = PBXGroup;
 			children = (
+				B0854CF416CD942300B28B39 /* Default-568h@2x.png */,
 				B022828913612FBC000975CF /* GCRetractableSectionController */,
 				B022825D13612914000975CF /* DemoSectionControllers */,
 				B09DF5B7136126E100E04146 /* Demo */,
@@ -202,6 +205,7 @@
 		B09DF5A4136126E100E04146 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = LittleKiwi;
 			};
 			buildConfigurationList = B09DF5A7136126E100E04146 /* Build configuration list for PBXProject "Demo" */;
@@ -237,6 +241,7 @@
 				B022829B13612FBC000975CF /* UpAccessory@2x.png in Resources */,
 				B022829C13612FBC000975CF /* UpAccessoryWhite.png in Resources */,
 				B022829D13612FBC000975CF /* UpAccessoryWhite@2x.png in Resources */,
+				B0854CF516CD942300B28B39 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +333,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -341,6 +347,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

@@ -20,7 +20,7 @@
 
 @synthesize useOnlyWhiteImages, titleTextColor, titleAlternativeTextColor;
 @synthesize viewController;
-@synthesize open;
+@synthesize open, rowAnimation;
 
 #pragma mark -
 #pragma mark Initialisation

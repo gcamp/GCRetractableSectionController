@@ -151,12 +151,20 @@
 	else [self didSelectContentCellAtRow:row - 1];
 }
 
+- (void) didSelectCellAtRow:(NSUInteger)row inSection:(NSUInteger)section {
+  activeSection = section;
+  [self didSelectCellAtRow:row];
+}
+
 - (void) didSelectTitleCell {
 	self.open = !self.open;
 	if (self.contentNumberOfRow != 0) [self setAccessoryViewOnCell:[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]]];
 	
 	NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
 	NSUInteger section = indexPath.section;
+  if (indexPath == nil) {
+    section = activeSection;
+  }
 	NSUInteger contentCount = self.contentNumberOfRow;
 	
 	[self.tableView beginUpdates];

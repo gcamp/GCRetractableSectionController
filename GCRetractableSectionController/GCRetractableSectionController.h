@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCRetractableSectionController : NSObject
+@interface GCRetractableSectionController : NSObject {
+  NSUInteger activeSection;
+}
 
 @property (nonatomic, assign, getter = isOpen) BOOL open;
 
@@ -38,6 +40,7 @@
 - (void) didSelectCellAtRow:(NSUInteger) row;
 - (void) didSelectTitleCell;
 - (void) didSelectContentCellAtRow:(NSUInteger) row;
+- (void) didSelectCellAtRow:(NSUInteger)row inSection:(NSUInteger)section;
 
 //Reserved for subclasses
 @property (nonatomic, readonly) UIViewController *viewController;
